@@ -1,0 +1,12 @@
+# Hệ điều hành
+.DS_Store  # macOS
+Thumbs.db  # Windows
+
+# IDE / Editor
+.vscode/
+.idea/
+*.suo
+*.swp
+
+# Git
+.gitignore
