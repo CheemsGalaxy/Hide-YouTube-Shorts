@@ -16,15 +16,17 @@ The goal of this project is to **hide or remove all Shorts videos on YouTube** e
 #### 1️⃣ Install uBlock Origin  
 First, install the **uBlock Origin** browser extension from the official store:  
 - [Chrome Web Store](https://chrome.google.com/webstore/detail/ublock-origin/)  
-- [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)  
+- [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)
+- Other
 
 #### 2️⃣ Add the YouTube Shorts Block Filter  
 Once installed, follow these steps:  
 
-1. Open the **uBlock Origin dashboard** (click the uBlock Origin icon in your browser, then click the ⚙️ settings icon).  
-2. Go to the **"My filters"** tab.  
-3. Remove any existing YouTube Shorts filters (if any).  
-4. Paste the enhanced filter provided by this project.  
+0. **Copy the filter text** from [here](https://github.com/CheemsGalaxy/Hide-YouTube-Shorts/blob/main/copy-me.txt).  
+1. Open the **uBlock Origin dashboard** (click the uBlock Origin icon in your browser, then select the ⚙️ settings icon).  
+2. Navigate to the **"My filters"** tab.  
+3. **Delete** any existing YouTube Shorts filters (if applicable).  
+4. **Paste** the enhanced filter provided by this project.  
 5. Click **"Apply changes"** to save.  
 
 ### 💡 Contribute & Contact  
