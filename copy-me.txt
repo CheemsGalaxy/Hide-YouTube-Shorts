@@ -1,8 +1,8 @@
 ! Title: Hide YouTube Shorts Enhanced
 ! Description: Completely hide all YouTube Shorts on desktop and mobile with improved layout
-! Version: 1.1
-! Last modified: 2025-04-03
-! Expires: 2 weeks
+! Version: 1.2
+! Last modified: 2025-05-25 GMT +7(Hanoi,Viet Nam)
+! Update Hide-YouTube-Shorts when an error detected or YouTube update UI/UX related short videos
 
 ! Optimize grid layout to avoid empty spaces
 www.youtube.com##ytd-rich-grid-row:style(display: flex !important; flex-wrap: wrap !important)
@@ -28,6 +28,7 @@ www.youtube.com##ytd-rich-section-renderer:has(#title:has-text(/(^| )Shorts( |$)
 www.youtube.com##ytd-reel-shelf-renderer:has(.ytd-reel-shelf-renderer:has-text(/(^| )Shorts( |$)/i))
 www.youtube.com##ytd-reel-shelf-renderer.ytd-item-section-renderer:nth-of-type(1)
 www.youtube.com##ytd-item-section-renderer.ytd-section-list-renderer:nth-of-type(3)
+www.youtube.com##ytd-rich-item-renderer.ytd-rich-grid-renderer.style-scope:nth-of-type(54)
 
 ! Hide Shorts tab on channel pages
 www.youtube.com##tp-yt-paper-tab:has-text(/^Shorts$/)
@@ -55,3 +56,5 @@ m.youtube.com##ytm-reel-shelf-renderer.item:has(.reel-shelf-title-wrapper .yt-co
 m.youtube.com##.single-column-browse-results-tabs>a:has-text(Shorts)
 m.youtube.com##yt-tab-shape:has-text(/^Shorts$/)
 m.youtube.com##ytm-pivot-bar-renderer ytm-pivot-bar-item-renderer:nth-child(2)
+
+
