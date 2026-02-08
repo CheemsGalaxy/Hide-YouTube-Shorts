@@ -1,61 +1,61 @@
 ! Title: Hide YouTube Shorts Enhanced
 ! Description: Completely hide all YouTube Shorts on desktop and mobile with improved layout
-! Version: 1.3
-! Last modified: 2025-08-11 GMT +7 (Hanoi, Viet Nam)
+! Version: 1.4
+! Last modified: 2026-02-9 GMT +7 (Hanoi, Viet Nam)
 ! Expires: 2 weeks
 
 ! --------------------------------------------------
-! DESKTOP - Grid layout optimization
+! DESKTOP – Grid layout (stable, no conflict)
 ! --------------------------------------------------
-www.youtube.com##ytd-rich-grid-row:style(display: flex !important; flex-wrap: wrap !important)
-www.youtube.com##ytd-rich-grid-renderer:style(--ytd-rich-grid-items-per-row: 4 !important)
-www.youtube.com##ytd-rich-grid-renderer:style(--ytd-rich-grid-posts-per-row: 4 !important)
-www.youtube.com##ytd-rich-grid-renderer:style(--ytd-rich-grid-shorts-per-row: 4 !important)
-www.youtube.com##ytd-rich-grid-row,#contents.ytd-rich-grid-row:style(display: grid !important)
+www.youtube.com##ytd-rich-grid-renderer:style(--ytd-rich-grid-items-per-row:4!important)
+www.youtube.com##ytd-rich-grid-renderer:style(--ytd-rich-grid-posts-per-row:4!important)
+www.youtube.com##ytd-rich-grid-renderer:style(--ytd-rich-grid-shorts-per-row:4!important)
+www.youtube.com##ytd-rich-grid-row:style(display:grid!important)
 
 ! --------------------------------------------------
-! DESKTOP - Hide Shorts videos
+! DESKTOP – Hide Shorts videos (core logic)
 ! --------------------------------------------------
 www.youtube.com##ytd-grid-video-renderer:has([overlay-style="SHORTS"])
 www.youtube.com##ytd-rich-item-renderer:has([overlay-style="SHORTS"])
 www.youtube.com##ytd-video-renderer:has([overlay-style="SHORTS"])
-www.youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(/(^| )#Shorts?( |$)/i))
-www.youtube.com##ytd-rich-item-renderer:has(#video-title:has-text(/(^| )#Shorts?( |$)/i))
+
+www.youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(/#Shorts?/i))
+www.youtube.com##ytd-rich-item-renderer:has(#video-title:has-text(/#Shorts?/i))
 
 ! --------------------------------------------------
-! DESKTOP - Remove Shorts UI elements
+! DESKTOP – Remove Shorts shelves / sections
+! --------------------------------------------------
+www.youtube.com##ytd-rich-section-renderer:has-text(/Shorts/i)
+www.youtube.com##ytd-reel-shelf-renderer
+www.youtube.com##ytd-shelf-renderer:has-text(/Shorts/i)
+
+! --------------------------------------------------
+! DESKTOP – Remove Shorts navigation & chips
 ! --------------------------------------------------
 www.youtube.com##ytd-guide-entry-renderer:has(yt-formatted-string:has-text(/^Shorts$/i))
 www.youtube.com##ytd-mini-guide-entry-renderer:has(.title:has-text(/^Shorts$/i))
-www.youtube.com##ytd-rich-section-renderer:has(#title:has-text(/(^| )Shorts( |$)/i))
-www.youtube.com##ytd-reel-shelf-renderer:has(.ytd-reel-shelf-renderer:has-text(/(^| )Shorts( |$)/i))
-www.youtube.com##ytd-reel-shelf-renderer.ytd-item-section-renderer:nth-of-type(1)
-www.youtube.com##ytd-item-section-renderer.ytd-section-list-renderer:nth-of-type(3)
-www.youtube.com##ytd-rich-item-renderer.ytd-rich-grid-renderer.style-scope:nth-of-type(54)
-www.youtube.com##ytd-rich-item-renderer.ytd-rich-grid-renderer.style-scope:nth-of-type(55)
 www.youtube.com##tp-yt-paper-tab:has-text(/^Shorts$/)
 www.youtube.com##yt-tab-shape:has-text(/^Shorts$/)
-www.youtube.com##ytd-reel-shelf-renderer.ytd-structured-description-content-renderer:has-text(/^Shorts remixing this video$/i)
-www.youtube.com###scroll-container > .yt-horizontal-list-renderer.style-scope
-www.youtube.com##ytd-reel-shelf-renderer.ytd-structured-description-content-renderer.style-scope
 www.youtube.com##yt-chip-cloud-chip-renderer:has(yt-formatted-string:has-text(/^Shorts$/i))
 
 ! --------------------------------------------------
-! DESKTOP - Support YouTube 2025 UI updates
+! DESKTOP – Support future Shorts containers
 ! --------------------------------------------------
 www.youtube.com##ytd-rich-grid-row:has([class*="shorts"])
-www.youtube.com##div[class*="shorts-container"], div[id*="shorts-container"]
-www.youtube.com##ytd-shelf-renderer:has(.ytd-shelf-renderer:has-text(/Shorts/))
-www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
-www.youtube.com##.ytd-rich-section-renderer.style-scope > .ytd-rich-shelf-renderer.style-scope
+www.youtube.com##ytd-shelf-renderer:has([class*="shorts"])
 
 ! --------------------------------------------------
-! MOBILE - Hide Shorts UI elements
+! MOBILE – Hide Shorts UI & videos
 ! --------------------------------------------------
 m.youtube.com##ytm-pivot-bar-item-renderer:has(.pivot-shorts)
 m.youtube.com##ytm-video-with-context-renderer:has([data-style="SHORTS"])
-m.youtube.com##ytm-rich-section-renderer:has(.reel-shelf-title-wrapper .yt-core-attributed-string:has-text(/(^| )Shorts( |$)/i))
-m.youtube.com##ytm-reel-shelf-renderer.item:has(.reel-shelf-title-wrapper .yt-core-attributed-string:has-text(/(^| )Shorts( |$)/i))
+m.youtube.com##ytm-rich-section-renderer:has-text(/Shorts/i)
+m.youtube.com##ytm-reel-shelf-renderer
 m.youtube.com##.single-column-browse-results-tabs>a:has-text(Shorts)
-m.youtube.com##yt-tab-shape:has-text(/^Shorts$/)
 m.youtube.com##ytm-pivot-bar-renderer ytm-pivot-bar-item-renderer:nth-child(2)
+
+
+! Hide guide section #5 (positional rule – fragile)
+www.youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(5)
+
+
