@@ -1,61 +1,94 @@
-! Title: Hide YouTube Shorts Enhanced
-! Description: Completely hide all YouTube Shorts on desktop and mobile with improved layout
-! Version: 1.4
-! Last modified: 2026-02-9 GMT +7 (Hanoi, Viet Nam)
-! Expires: 2 weeks
-
-! --------------------------------------------------
-! DESKTOP – Grid layout (stable, no conflict)
-! --------------------------------------------------
-www.youtube.com##ytd-rich-grid-renderer:style(--ytd-rich-grid-items-per-row:4!important)
-www.youtube.com##ytd-rich-grid-renderer:style(--ytd-rich-grid-posts-per-row:4!important)
-www.youtube.com##ytd-rich-grid-renderer:style(--ytd-rich-grid-shorts-per-row:4!important)
-www.youtube.com##ytd-rich-grid-row:style(display:grid!important)
-
-! --------------------------------------------------
-! DESKTOP – Hide Shorts videos (core logic)
-! --------------------------------------------------
-www.youtube.com##ytd-grid-video-renderer:has([overlay-style="SHORTS"])
-www.youtube.com##ytd-rich-item-renderer:has([overlay-style="SHORTS"])
-www.youtube.com##ytd-video-renderer:has([overlay-style="SHORTS"])
-
-www.youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(/#Shorts?/i))
-www.youtube.com##ytd-rich-item-renderer:has(#video-title:has-text(/#Shorts?/i))
-
-! --------------------------------------------------
-! DESKTOP – Remove Shorts shelves / sections
-! --------------------------------------------------
-www.youtube.com##ytd-rich-section-renderer:has-text(/Shorts/i)
-www.youtube.com##ytd-reel-shelf-renderer
-www.youtube.com##ytd-shelf-renderer:has-text(/Shorts/i)
-
-! --------------------------------------------------
-! DESKTOP – Remove Shorts navigation & chips
-! --------------------------------------------------
-www.youtube.com##ytd-guide-entry-renderer:has(yt-formatted-string:has-text(/^Shorts$/i))
-www.youtube.com##ytd-mini-guide-entry-renderer:has(.title:has-text(/^Shorts$/i))
-www.youtube.com##tp-yt-paper-tab:has-text(/^Shorts$/)
-www.youtube.com##yt-tab-shape:has-text(/^Shorts$/)
-www.youtube.com##yt-chip-cloud-chip-renderer:has(yt-formatted-string:has-text(/^Shorts$/i))
-
-! --------------------------------------------------
-! DESKTOP – Support future Shorts containers
-! --------------------------------------------------
-www.youtube.com##ytd-rich-grid-row:has([class*="shorts"])
-www.youtube.com##ytd-shelf-renderer:has([class*="shorts"])
-
-! --------------------------------------------------
-! MOBILE – Hide Shorts UI & videos
-! --------------------------------------------------
-m.youtube.com##ytm-pivot-bar-item-renderer:has(.pivot-shorts)
-m.youtube.com##ytm-video-with-context-renderer:has([data-style="SHORTS"])
-m.youtube.com##ytm-rich-section-renderer:has-text(/Shorts/i)
-m.youtube.com##ytm-reel-shelf-renderer
-m.youtube.com##.single-column-browse-results-tabs>a:has-text(Shorts)
-m.youtube.com##ytm-pivot-bar-renderer ytm-pivot-bar-item-renderer:nth-child(2)
+! ╔══════════════════════════════════════════════════════════╗
+! ║                 HIDE YOUTUBE SHORTS                      ║
+! ╠══════════════════════════════════════════════════════════╣
+! ║ Version     : 1.5                                        ║
+! ║ Description : Hide all YouTube Shorts on desktop &       ║
+! ║               mobile                                     ║
+! ║ Modified    : 2026-07-13 GMT+7 (Hanoi, Vietnam)          ║
+! ║ Expires     : 2 weeks                                    ║
+! ╚══════════════════════════════════════════════════════════╝
 
 
-! Hide guide section #5 (positional rule – fragile)
-www.youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(5)
+! ┌──────────────────────────────────────────────────────────┐
+! │  SECTION 1 — DESKTOP (youtube.com)                       │
+! └──────────────────────────────────────────────────────────┘
+
+  ! --- 1.1 Sidebar / navigation menu ---------------------------
+  ! Remove "Shorts" tab from the expanded left sidebar
+  youtube.com##ytd-guide-entry-renderer:has(a[title="Shorts"])
+
+  ! Remove "Shorts" icon from the collapsed/mini sidebar
+  youtube.com##ytd-mini-guide-entry-renderer:has(a[title="Shorts"])
+
+  ! Remove "Shorts" tab from the top bar on channel pages
+  youtube.com##[tab-title="Shorts"]
 
 
+  ! --- 1.2 Homepage / feed --------------------------------------
+  ! Hide the horizontal Shorts shelf/carousel on the homepage
+  youtube.com##ytd-rich-shelf-renderer[is-shorts]
+
+  ! Hide the wrapping section when it only contains a Shorts shelf
+  youtube.com##ytd-rich-section-renderer:has(ytd-rich-shelf-renderer[is-shorts])
+
+  ! Hide individual Shorts thumbnails mixed into the regular grid
+  youtube.com##ytd-rich-item-renderer:has(a[href^="/shorts/"])
+
+  ! Newer layout: component used for Shorts shelf items
+  youtube.com##ytm-shorts-lockup-view-model
+
+
+  ! --- 1.3 Search results & recommendations ----------------------
+  ! Hide Shorts shelf that sometimes appears in search results
+  youtube.com##ytd-reel-shelf-renderer
+
+  ! Hide individual Shorts results in list-style search results
+  youtube.com##ytd-video-renderer:has(a[href^="/shorts/"])
+
+  ! Hide individual Shorts results in grid layouts (e.g. related videos)
+  youtube.com##ytd-grid-video-renderer:has(a[href^="/shorts/"])
+
+
+  ! --- 1.4 Hard block (optional) ----------------------------------
+  ! Blocks the Shorts player from loading entirely, even via a
+  ! direct/shared link. Comment out (add "!" at start) if you only
+  ! want Shorts hidden from the UI, not blocked outright.
+  ||youtube.com/shorts/*
+
+
+! ┌──────────────────────────────────────────────────────────┐
+! │  SECTION 2 — MOBILE (m.youtube.com)                      │
+! └──────────────────────────────────────────────────────────┘
+
+  ! --- 2.1 Bottom navigation bar ----------------------------------
+  ! Hide "Shorts" tab/icon in the bottom nav bar
+  m.youtube.com##.pivot-shorts
+
+  ! Fallback selector in case the class name above changes
+  m.youtube.com##a[href="/shorts"]
+
+
+  ! --- 2.2 Homepage / feed --------------------------------------
+  ! Hide the horizontal Shorts shelf on the mobile homepage
+  m.youtube.com##.reel-shelf-renderer
+  m.youtube.com##ytm-reel-shelf-renderer
+
+  ! Hide individual Shorts thumbnails mixed into the mobile feed
+  m.youtube.com##ytm-video-with-context-renderer:has(a[href^="/shorts/"])
+
+  ! Newer mobile layout components for Shorts items
+  m.youtube.com##ytm-shorts-lockup-view-model-v2
+  m.youtube.com##ytm-shorts-lockup-view-model
+
+
+  ! --- 2.3 Search results -----------------------------------------
+  ! Hide Shorts shelf appearing inside mobile search results
+  m.youtube.com##ytm-reel-shelf-renderer
+
+  ! Hide individual Shorts results in mobile search list
+  m.youtube.com##ytm-compact-video-renderer:has(a[href^="/shorts/"])
+
+
+  ! --- 2.4 Hard block (optional) ----------------------------------
+  ! Same as 1.4 above, but for the mobile domain
+  ||m.youtube.com/shorts/*
