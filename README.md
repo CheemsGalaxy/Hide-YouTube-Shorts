@@ -1,5 +1,11 @@
 🇬🇧 [English](#-english) | 🇻🇳 [Tiếng Việt](#-tiếng-việt)
 
+[
+
+![Donate MoMo](https://img.shields.io/badge/Donate-MoMo-pink?style=for-the-badge&logo=momo&logoColor=white)
+
+](https://me.momo.vn/chimchimkl28)
+
 # Hide-YouTube-Shorts
 Hide YouTube Shorts on the web using uBlock Origin.
 
@@ -41,6 +47,15 @@ You're welcome to:
 
 📬 **Contact via Discord**: [Join here](https://discord.gg/auFWQS3d)
 
+### ☕ Support This Project
+If this saved you from Shorts brain rot, consider buying me a coffee:
+
+[
+
+![Donate MoMo](https://img.shields.io/badge/Donate-MoMo-pink?style=for-the-badge&logo=momo&logoColor=white)
+
+](https://me.momo.vn/chimchimkl28)
+
 [⬆ Back to top](#hide-youtube-shorts)
 
 ---
@@ -80,5 +95,14 @@ Bạn có thể:
 - Chỉnh sửa filter theo nhu cầu sử dụng cá nhân.
 
 📬 **Liên hệ qua Discord**: [Tham gia tại đây](https://discord.gg/auFWQS3d)
+
+### ☕ Ủng hộ dự án
+Nếu dự án này giúp bạn thoát khỏi "não cá vàng vì Shorts", có thể ủng hộ mình một ly cà phê:
+
+[
+
+![Donate MoMo](https://img.shields.io/badge/Donate-MoMo-pink?style=for-the-badge&logo=momo&logoColor=white)
+
+](https://me.momo.vn/chimchimkl28)
 
 [⬆ Back to top](#hide-youtube-shorts)
