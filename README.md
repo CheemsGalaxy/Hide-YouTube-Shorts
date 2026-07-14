@@ -1,11 +1,16 @@
 🇬🇧 [English](#-english) | 🇻🇳 [Tiếng Việt](#-tiếng-việt)
 
+<div align="center">
+
+### ☕ Support This Project
+
 [
 
 ![Donate MoMo](https://img.shields.io/badge/Donate-MoMo-pink?style=for-the-badge&logo=momo&logoColor=white)
 
 ](https://me.momo.vn/chimchimkl28)
 
+</div>
 # Hide-YouTube-Shorts
 Hide YouTube Shorts on the web using uBlock Origin.
 
