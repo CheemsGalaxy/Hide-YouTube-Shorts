@@ -1,14 +1,11 @@
-🇬🇧 [English](#-english) | 🇻🇳 [Tiếng Việt](#-tiếng-việt)
+🇬🇧 [English](#-english) | 🇻🇳 [Giới thiệu](#-tiếng-việt)
 
 <div align="center">
 
 ### ☕ Support This Project
 
 [
-
-![Donate MoMo](https://img.shields.io/badge/Donate-MoMo-pink?style=for-the-badge&logo=momo&logoColor=white)
-
-](https://me.momo.vn/chimchimkl28)
+![DonateMoMo](https://img.shields.io/badge/Donate-MoMo-pink?style=for-the-badge&logo=momo&logoColor=white)](https://me.momo.vn/chimchimkl28)
 
 </div>
 
