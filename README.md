@@ -55,11 +55,17 @@ You're welcome to:
 ### ☕ Support This Project
 If this saved you from Shorts brain rot, consider buying me a coffee:
 
-[
+<div align="center">
+
+### ☕ Support This Project
+
+
 
 ![Donate MoMo](https://img.shields.io/badge/Donate-MoMo-pink?style=for-the-badge&logo=momo&logoColor=white)
 
-](https://me.momo.vn/chimchimkl28)
+(https://me.momo.vn/chimchimkl28)
+
+</div>
 
 [⬆ Back to top](#hide-youtube-shorts)
 
@@ -104,10 +110,9 @@ Bạn có thể:
 ### ☕ Ủng hộ dự án
 Nếu dự án này giúp bạn thoát khỏi "não cá vàng vì Shorts", có thể ủng hộ mình một ly cà phê:
 
-[
 
 ![Donate MoMo](https://img.shields.io/badge/Donate-MoMo-pink?style=for-the-badge&logo=momo&logoColor=white)
 
-](https://me.momo.vn/chimchimkl28)
+(https://me.momo.vn/chimchimkl28)
 
 [⬆ Back to top](#hide-youtube-shorts)
