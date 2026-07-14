@@ -1,4 +1,4 @@
-🇬🇧 [English](#-english) | 🇻🇳 [Giới thiệu](#-tiếng-việt)
+🇬🇧 [English](#-english) | 🇻🇳 [Tiếng Việt](#-tiếng-việt)
 
 <div align="center">
 
