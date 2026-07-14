@@ -108,9 +108,10 @@ Bạn có thể:
 ### ☕ Ủng hộ dự án
 Nếu dự án này giúp bạn thoát khỏi "não cá vàng vì Shorts", có thể ủng hộ mình một ly cà phê:
 
+<div align="center">
 
-![Donate MoMo](https://img.shields.io/badge/Donate-MoMo-pink?style=for-the-badge&logo=momo&logoColor=white)
+### ☕ Support This Project
 
-(https://me.momo.vn/chimchimkl28)
-
-[⬆ Back to top](#hide-youtube-shorts)
+[
+![Donate MoMo](https://img.shields.io/badge/Donate-MoMo-pink?style=for-the-badge&logo=momo&logoColor=white)](https://me.momo.vn/chimchimkl28)
+</div>
