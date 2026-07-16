@@ -1,10 +1,10 @@
 ! ╔══════════════════════════════════════════════════════════╗
 ! ║                 HIDE YOUTUBE SHORTS                      ║
 ! ╠══════════════════════════════════════════════════════════╣
-! ║ Version     : 1.5                                        ║
+! ║ Version     : 1.5.1                                      ║
 ! ║ Description : Hide all YouTube Shorts on desktop &       ║
-! ║               mobile                                     ║
-! ║ Modified    : 2026-07-13 GMT+7 (Hanoi, Vietnam)          ║
+! ║               mobile, plus inline Premium promo banners  ║
+! ║ Modified    : 2026-07-16 GMT+7 (Hanoi, Vietnam)          ║
 ! ║ Expires     : 2 weeks                                    ║
 ! ╚══════════════════════════════════════════════════════════╝
 
@@ -54,6 +54,15 @@
   ! direct/shared link. Comment out (add "!" at start) if you only
   ! want Shorts hidden from the UI, not blocked outright.
   ||youtube.com/shorts/*
+
+
+  ! --- 1.5 Inline promo banners -----------------------------------
+  ! YouTube Premium statement banner (e.g. "Enjoy ad-free content
+  ! with YouTube Premium") appearing among video recommendations
+  youtube.com##ytd-statement-banner-renderer
+
+  ! Remove the wrapping section too, so no empty gap is left
+  youtube.com##ytd-rich-section-renderer:has(ytd-statement-banner-renderer)
 
 
 ! ┌──────────────────────────────────────────────────────────┐
